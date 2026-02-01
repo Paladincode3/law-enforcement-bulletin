@@ -5,91 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Law Enforcement Bulletin - Select Jurisdiction</title>
     <style>
-        /* BASE STYLES */
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #f4f4f4; 
-            color: #333; 
-            text-align: center; 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-        }
-        
-        /* PROFESSIONAL HEADER (Blue & Gold) */
-        header { 
-            background: linear-gradient(to right, #002147, #003366); 
-            color: white; 
-            padding: 40px; 
-            border-bottom: 5px solid #C5B358; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+        /* SAME STYLES AS BEFORE */
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; text-align: center; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: linear-gradient(to right, #002147, #003366); color: white; padding: 40px; border-bottom: 5px solid #C5B358; }
         h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; font-size: 2.5em; }
         p { color: #ccc; font-style: italic; margin-top: 10px; }
-
-        /* MAIN CONTENT AREA */
-        .container { 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 20px; 
-        }
-
-        h2 { color: #002147; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 30px; }
-
-        /* BUTTON GRID */
-        .btn-grid { 
-            display: flex; 
-            gap: 30px; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-        }
-        
-        /* STATE CARDS */
-        .state-card {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 25px;
-            width: 220px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-decoration: none;
-            color: #002147;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hover Effects */
-        .state-card:hover { 
-            transform: translateY(-5px); 
-            border-color: #C5B358; 
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* IMAGES */
-        .state-card img { 
-            width: 100px; 
-            height: auto; 
-            margin-bottom: 15px; 
-            border: 1px solid #eee; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
+        .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .btn-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+        .state-card { background: white; border: 1px solid #ccc; border-radius: 8px; padding: 25px; width: 220px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-decoration: none; color: #002147; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
+        .state-card:hover { transform: translateY(-5px); border-color: #C5B358; }
+        .state-card img { width: 100px; height: auto; margin-bottom: 15px; border: 1px solid #eee; }
         .state-card h3 { margin: 0; font-size: 1.2em; font-weight: bold; }
-
-        /* FOOTER */
-        footer { 
-            padding: 20px; 
-            background: #333; 
-            color: #aaa; 
-            margin-top: auto; 
-            font-size: 0.9em;
-        }
+        footer { padding: 20px; background: #333; color: #aaa; margin-top: auto; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -104,19 +31,19 @@
         
         <div class="btn-grid">
             <a href="ohio.html" class="state-card">
-                <img src="Flag_of_Ohio (1).svg" alt="Ohio Flag">
+                <img src="state-flags/Flag_of_Ohio.svg" alt="Ohio Flag">
                 <h3>OHIO</h3>
             </a>
 
             <a href="pennsylvania.html" class="state-card">
-                <img src="Flag_of_Pennsylvania.svg" alt="PA Flag">
+                <img src="state-flags/Flag_of_Pennsylvania.svg" alt="PA Flag">
                 <h3>PENNSYLVANIA</h3>
             </a>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Law Enforcement Bulletin | Updates Weekly
+        &copy; 2026 Law Enforcement Bulletin
     </footer>
 
 </body>
