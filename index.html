@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Law Enforcement Bulletin</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: #002147; /* Police Navy Blue */
+            color: #C5B358; /* Gold */
+            padding: 40px 20px;
+            border-bottom: 5px solid #C5B358;
+        }
+        
+        h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 3em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        <img src="leblogo2.jpg" alt="Law Enforcement Bulletin Logo" style="width:200px; display:block; margin: 0 auto 30px;"
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #002147;
+            color: #555;
+        }
+
+        /* --- State Selection Buttons --- */
+        .state-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .state-btn {
+            background-color: #002147;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 2px solid #002147;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .state-btn:hover {
+            background-color: white;
+            color: #002147;
+        }
+
+        .coming-soon {
+            background-color: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            background-color: #ccc;
+            color: white;
+        }
+
+
+/* --- Dropdown Styling --- */
+.dropdown-container {
+    margin: 30px auto;
+    text-align: center;
+}
+
+select#state-select {
+    padding: 15px;
+    font-size: 1.1em;
+    border: 2px solid #002147;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    width: 70%;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+select#state-select:focus {
+    outline: none;
+    border-color: #C5B358; /* Gold highlight when clicked */
+    box-shadow: 0 0 5px rgba(197, 179, 88, 0.5);
+}
+
+.go-btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #002147;
+    color: #C5B358;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.go-btn:hover {
+    background-color: #003366;
+}
+
+
+
+
+
+
+
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Law Enforcement Bulletin</h1>
+        <p class="subtitle">The Premier Source for Officer Safety & Legal Updates</p>
+    </header>
+
+
+    <div class="container">
+        <img src="./leblogo2.jpg" alt="Law Enforcement Bulletin Logo" style="width:200px; display:block; margin: 0 auto 30px;">
+
+        <h2>Select Your Jurisdiction</h2>
+        <p>Access daily executive summaries, case law updates, and safety alerts.</p>
+
+        <div class="dropdown-container">
+    <label for="state-select" style="display:block; margin-bottom:10px; font-weight:bold; color:#002147;">Select Your State:</label>
+    
+    <select id="state-select">
+        <option value="">-- Choose a State --</option>
+        <option value="alabama">Alabama</option>
+        <option value="alaska">Alaska</option>
+        <option value="arizona">Arizona</option>
+        <option value="arkansas">Arkansas</option>
+        <option value="california">California</option>
+        <option value="colorado">Colorado</option>
+        <option value="connecticut">Connecticut</option>
+        <option value="delaware">Delaware</option>
+        <option value="florida">Florida</option>
+        <option value="georgia">Georgia</option>
+        <option value="hawaii">Hawaii</option>
+        <option value="idaho">Idaho</option>
+        <option value="illinois">Illinois</option>
+        <option value="indiana">Indiana</option>
+        <option value="iowa">Iowa</option>
+        <option value="kansas">Kansas</option>
+        <option value="kentucky">Kentucky</option>
+        <option value="louisiana">Louisiana</option>
+        <option value="maine">Maine</option>
+        <option value="maryland">Maryland</option>
+        <option value="massachusetts">Massachusetts</option>
+        <option value="michigan">Michigan</option>
+        <option value="minnesota">Minnesota</option>
+        <option value="mississippi">Mississippi</option>
+        <option value="missouri">Missouri</option>
+        <option value="montana">Montana</option>
+        <option value="nebraska">Nebraska</option>
+        <option value="nevada">Nevada</option>
+        <option value="new-hampshire">New Hampshire</option>
+        <option value="new-jersey">New Jersey</option>
+        <option value="new-mexico">New Mexico</option>
+        <option value="new-york">New York</option>
+        <option value="north-carolina">North Carolina</option>
+        <option value="north-dakota">North Dakota</option>
+        <option value="ohio.html">Ohio</option>
+        <option value="oklahoma">Oklahoma</option>
+        <option value="oregon">Oregon</option>
+        <option value="pennsylvania">Pennsylvania</option>
+        <option value="rhode-island">Rhode Island</option>
+        <option value="south-carolina">South Carolina</option>
+        <option value="south-dakota">South Dakota</option>
+        <option value="tennessee">Tennessee</option>
+        <option value="texas">Texas</option>
+        <option value="utah">Utah</option>
+        <option value="vermont">Vermont</option>
+        <option value="virginia">Virginia</option>
+        <option value="washington">Washington</option>
+        <option value="west-virginia">West Virginia</option>
+        <option value="wisconsin">Wisconsin</option>
+        <option value="wyoming">Wyoming</option>
+    </select>
+
+    <button class="go-btn" onclick="goToState()">GO</button>
+
+    <script>
+        function goToState() {
+            var selectBox = document.getElementById("state-select");
+            var selectedValue = selectBox.value;
+            
+            if (selectedValue) {
+                // If it ends in .html, go there
+                if (selectedValue.includes('.html')) {
+                    window.location.href = selectedValue;
+                } else {
+                    // Placeholder for states you haven't built yet
+                    alert("Coming Soon! The bulletin for " + selectBox.options[selectBox.selectedIndex].text + " is under construction.");
+                }
+            } else {
+                alert("Please select a state first.");
+            }
+        }
+    </script>
+</div>
+            <a href="ohio.html" class="state-btn">OHIO</a>
+            
+            <a href="#" class="state-btn coming-soon">New York</a>
+            <a href="#" class="state-btn coming-soon">Texas</a>
+            <a href="#" class="state-btn coming-soon">Florida</a>
+        </div>
+    </div>
+
+    <footer style="margin-top: 50px; color: #666; font-size: 0.9em;">
+        &copy; 2026 The Law Enforcement Bulletin. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

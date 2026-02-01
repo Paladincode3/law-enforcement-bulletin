@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohio - Law Enforcement Bulletin</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Top Navigation --- */
+        nav {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px 20px;
+            text-align: right;
+            border-bottom: 3px solid #C5B358;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        nav a:hover { color: #C5B358; }
+
+        /* --- State Header --- */
+        .state-header {
+            background: linear-gradient(to right, #002147, #003366);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #C5B358;
+        }
+
+        .state-header h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.8em;
+            margin: 10px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2; 
+        }
+
+        /* --- Motto Styling --- */
+        .state-motto {
+            font-size: 0.4em;       
+            font-style: italic;     
+            text-transform: none;   
+            display: block;         
+            margin-top: 5px;
+            font-weight: normal;    
+            opacity: 0.9;           
+        }
+
+        /* --- Logo Styling --- */
+        .state-logo {
+            width: 150px;
+            display: block;
+            margin: 0 auto 15px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); 
+        }
+
+        /* --- Main Content Layout --- */
+        .content-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+
+        /* --- Card Design --- */
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 6px solid #002147;
+            position: relative;
+        }
+
+        .card h2 {
+            font-family: 'Times New Roman', serif;
+            color: #002147;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* --- SOURCE LINK BUTTONS --- */
+        .source-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 12px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #003366;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .source-link:hover {
+            background-color: #003366;
+            color: white;
+            border-color: #003366;
+        }
+
+        /* Card Color Coding */
+        .alert-card { border-left-color: #d9534f; }
+        .alert-card h2 { color: #d9534f; }
+
+        .legal-card { border-left-color: #C5B358; }
+        
+        .date-stamp {
+            display: inline-block;
+            background-color: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Sidebar Widgets --- */
+        .sidebar .widget {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .widget h3 { margin-top: 0; color: #333; border-bottom: 2px solid #C5B358; padding-bottom: 10px; display: inline-block;}
+        .widget ul { padding-left: 20px; }
+        .widget li { margin-bottom: 12px; }
+        .widget a { color: #002147; text-decoration: none; font-weight: bold; }
+        .widget a:hover { text-decoration: underline; }
+
+        /* --- NEW: COMING SOON WATERMARK --- */
+        #coming-soon-widget {
+            position: relative; /* Anchors the overlay */
+            overflow: hidden; /* Ensures overlay doesn't spill out corners */
+        }
+
+        /* This creates the dark overlay and text */
+        #coming-soon-widget::after {
+            content: "COMING SOON";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            
+            /* Dark gray semi-transparent background */
+            background-color: rgba(50, 50, 50, 0.8); 
+            
+            /* Text styling */
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            transform: rotate(-15deg); /* Angled watermark look */
+            letter-spacing: 1px;
+            z-index: 10; /* Ensures it's on top */
+            backdrop-filter: blur(1px); /* Slight blur effect */
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #f0f0f0; 
+            padding: 30px 20px; 
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-container { grid-template-columns: 1fr; }
+            .state-header h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <header class="state-header">
+        <img src="state-flags/Flag_of_Ohio (1).svg" alt="Ohio Shield" class="state-logo">
+        
+        <h1>
+            Ohio
+            <span class="state-motto">"With God, All Things Are Possible"</span>
+        </h1>
+        
+        <p>Daily Summary & Legal Updates</p>
+    </header>
+
+    <div class="content-container">
+        
+        <main>
+            <div class="card alert-card">
+                <h2>Officer Safety Alerts</h2>
+                <span class="date-stamp">Current as of: JAN 31, 2026</span>
+                <p><strong>Topic:</strong> 2026 Mandatory CPT Requirements</p>
+                <p>The Ohio Attorney General has officially released the 2026 Continuing Professional Training (CPT) mandates. All sworn officers must complete <strong>24 hours</strong> of training this year. The 8 mandatory hours focus on "Critical Decision-Making," "Medical Aid," and "Tactical Communication."</p>
+                
+                <a href="https://www.ohioattorneygeneral.gov/Law-Enforcement/Ohio-Peace-Officer-Training-Academy/2026-Continuing-Professional-Training" target="_blank" class="source-link">
+                    Read Official Memo (Ohio AG) &rarr;
+                </a>
+            </div>
+
+            <div class="card legal-card">
+                <h2>Legal Updates: Case Law & Legislation</h2>
+                <p><strong>Case/Bill:</strong> House Bill 44 (Lateral Hires)</p>
+                <p><strong>Summary:</strong> Signed into law late 2025, HB 44 is now effective. It allows police departments to bypass the civil service exam for applicants with "exceptional qualifications" or prior certification.</p>
+                <p><strong>Impact:</strong> This streamlines hiring for lateral transfers. Departments should update their hiring policies to reflect this new exemption.</p>
+                
+                <a href="https://www.legislature.ohio.gov/legislation/135/hb44" target="_blank" class="source-link">
+                    View Bill Text (Ohio Legislature) &rarr;
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Accountability & General News</h2>
+                <p><strong>Topic:</strong> Violent Crime Reduction Grant (FY 2026)</p>
+                <p>Funding for the 2026 cycle is now active (Jan 1 - Dec 31). The grant focuses on technology for ballistics processing and overtime for investigators in high-crime zones. Agencies should review reporting requirements immediately.</p>
+                
+                <a href="https://ocjs.ohio.gov/" target="_blank" class="source-link">
+                    Visit Office of Criminal Justice Services &rarr;
+                </a>
+            </div>
+       
+            <div class="card" style="border-left: 6px solid #555;">
+                <h2>Bulletin Archive</h2>
+                <p>Search past alerts by keyword, topic, or date.</p>
+                
+                <input type="text" id="archiveSearch" onkeyup="filterArchive()" placeholder="Search archives (e.g., 'DUI', 'Jan 24', 'Case Law')..." 
+                style="width: 100%; padding: 12px; font-size: 1em; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 4px;">
+
+                <ul id="archiveList" style="list-style-type: none; padding: 0;">
+                    
+                    <li class="archive-item" style="padding: 15px; border-bottom: 1px solid #eee;">
+                        <span style="color:#C5B358; font-weight:bold; font-size:0.8em;">DEC 23, 2025</span>
+                        <strong style="color:#002147; display:block; margin-top:5px;">Supreme Court: Civil Stalking Orders</strong>
+                        <span style="color:#555; font-size:0.9em;">Legal Update: Court ruled in <em>Z.J. v. R.M.</em> that a "belief" of mental distress is sufficient for a protection order.</span>
+                        <br>
+                        <a href="https://www.courtnewsohio.gov/cases/2025/SCO/1223/240340.asp" target="_blank" style="font-size:0.8em; color:#003366;">[Read Court Summary]</a>
+                    </li>
+
+                    <li class="archive-item" style="padding: 15px; border-bottom: 1px solid #eee;">
+                        <span style="color:#C5B358; font-weight:bold; font-size:0.8em;">NOV 17, 2025</span>
+                        <strong style="color:#d9534f; display:block; margin-top:5px;">Officer Safety: Blue Alert System</strong>
+                        <span style="color:#555; font-size:0.9em;">Safety Alert: Review of the Blue Alert protocols for officers missing or killed in the line of duty.</span>
+                        <br>
+                        <a href="https://www.ohioattorneygeneral.gov/Law-Enforcement/Local-Law-Enforcement/Blue-Alert" target="_blank" style="font-size:0.8em; color:#003366;">[View Protocols]</a>
+                    </li>
+
+                </ul>
+                <p id="noResults" style="display:none; color:red; text-align:center;">No results found.</p>
+            </div>
+       
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>Ohio Quick Links</h3>
+                <ul>
+                    <li><a href="https://codes.ohio.gov/ohio-revised-code" target="_blank">Ohio Revised Code</a></li>
+                    <li><a href="https://www.ohioattorneygeneral.gov/" target="_blank">Ohio Attorney General</a></li>
+                    <li><a href="https://www.ohioattorneygeneral.gov/Law-Enforcement/Ohio-Peace-Officer-Training-Academy" target="_blank">Ohio POST / OPOTA</a></li>
+                    <li><a href="https://search.usa.gov/search/docs?utf8=%E2%9C%93&affiliate=www.dol.gov&query=Law+enforcement&dc=4955" target="_blank">US Department of Labor</a></li>
+                    <li><a href="https://lris.com/" target="_blank">Labor Relations Information System (LRIS)</a></li>
+                </ul>
+            </div>
+
+            <div class="widget" id="coming-soon-widget">
+                <h3>Regional Archives</h3>
+                <p><em>Filter by County or Region.</em></p>
+                <select style="width: 100%; padding: 8px; margin-top: 10px;" disabled>
+                    <option>Select a Region/County...</option>
+                </select>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto; font-size: 0.8em; color: #555; text-align: justify; line-height: 1.4;">
+            <p><strong>LEGAL DISCLAIMER:</strong> The information provided on The Law Enforcement Bulletin is for general informational and educational purposes only. It does not constitute legal advice, nor does it establish an attorney-client relationship. While we strive to provide accurate and up-to-date summaries of case law and statutes, officers should always consult their department's legal counsel, the local prosecutor's office, or their agency's policy manual before applying this information in the field. Reliance on any information provided herein is solely at your own risk.</p>
+        </div>
+        <p style="margin-top: 20px; color: #002147; font-weight: bold;">&copy; 2026 The Law Enforcement Bulletin. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function filterArchive() {
+            var input = document.getElementById('archiveSearch');
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById("archiveList");
+            var li = ul.getElementsByTagName('li');
+            var visibleCount = 0;
+
+            for (var i = 0; i < li.length; i++) {
+                var textValue = li[i].textContent || li[i].innerText;
+                if (textValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = ""; 
+                    visibleCount++;
+                } else {
+                    li[i].style.display = "none"; 
+                }
+            }
+
+            var noMsg = document.getElementById("noResults");
+            if (visibleCount === 0) {
+                noMsg.style.display = "block";
+            } else {
+                noMsg.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

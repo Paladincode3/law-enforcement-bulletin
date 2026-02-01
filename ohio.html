@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ohio Law Enforcement Bulletin</title>
+<style>
+    body { background-color: #eef2f5; font-family: Arial, sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { background: #1a1a1a; color: white; padding: 15px; text-align: right; border-bottom: 3px solid #C5B358; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-weight: bold; }
+    header { background: linear-gradient(to right, #002147, #003366); color: white; padding: 40px; text-align: center; border-bottom: 5px solid #C5B358; }
+    header h1 { font-size: 3em; margin: 0; text-transform: uppercase; font-family: serif; }
+    .motto { font-size: 0.6em; font-style: italic; display: block; opacity: 0.8; margin-top: 10px; }
+    .container { max-width: 1000px; margin: 30px auto; padding: 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px; flex: 1; }
+    .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 5px; border-left: 5px solid #002147; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .red-card { border-left-color: #d9534f; }
+    .gold-card { border-left-color: #C5B358; }
+    .fyi-card { border-left-color: #6f42c1; }
+    .archive-card { border-left-color: #555; }
+    h2 { margin-top: 0; color: #002147; font-family: serif; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .red-card h2 { color: #d9534f; }
+    .gold-card h2 { color: #b08d00; }
+    .fyi-card h2 { color: #6f42c1; }
+    .citation-line { font-size: 0.9em; color: #555; margin-bottom: 5px; display: block; font-style: italic; }
+    .date-badge { background-color: #eee; color: #333; font-weight: bold; padding: 3px 6px; border-radius: 4px; font-size: 0.75em; vertical-align: middle; margin-right: 8px; }
+    .sidebar { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .sidebar ul { padding-left: 20px; }
+    .sidebar li { margin-bottom: 10px; }
+    .sidebar a { color: #002147; text-decoration: none; font-weight: bold; }
+    .locked { position: relative; overflow: hidden; }
+    .locked::after { content: "COMING SOON"; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(50,50,50,0.8); color: white; display: flex; justify-content: center; align-items: center; font-weight: bold; transform: rotate(-10deg); }
+    .btn { display: inline-block; background: #f0f0f0; padding: 8px 12px; text-decoration: none; color: #002147; font-weight: bold; border-radius: 3px; margin-top: 10px; border: 1px solid #ccc; }
+    .btn:hover { background: #002147; color: white; }
+    .archive-link { font-size: 0.8em; text-decoration: none; color: white; background-color: #555; padding: 3px 8px; border-radius: 3px; display: inline-block; margin-top: 5px; }
+    .archive-link:hover { background-color: #333; }
+    footer { text-align: center; padding: 20px; background: #f0f0f0; border-top: 1px solid #ccc; margin-top: auto; }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<header>
+    <img src="state-flags/Flag_of_Ohio (1).svg" alt="Ohio Flag" style="width:120px; display:block; margin:0 auto 10px;">
+    <h1>Ohio <span class="motto">"With God, All Things Are Possible"</span></h1>
+    <p>Information and Legal Updates</p>
+</header>
+
+<div class="container">
+    <main>
+        
+        <div class="card red-card">
+            <h2>Officer Safety: Vehicle Search (Odor)</h2>
+            <span class="citation-line"><span class="date-badge">OCT 03, 2025</span> <em>State v. Gray</em>, 2025-Ohio-4479</span>
+            <p><strong>Holding:</strong> Major Change. The Ohio First District Court of Appeals has ruled that the smell of marijuana <strong>alone</strong> is no longer sufficient to establish probable cause to search a vehicle. Officers must articulate additional indicators of criminal activity.</p>
+            <a href="https://law.justia.com/cases/ohio/first-district-court-of-appeals/2025/c-250119.html" target="_blank" class="btn">Read Opinion</a>
+        </div>
+
+        <div class="card gold-card">
+            <h2>Legislation: Lateral Hiring</h2>
+            <span class="citation-line"><span class="date-badge">FEB 04, 2026</span> <em>House Bill 44</em></span>
+            <p><strong>Topic:</strong> Civil Service Exemption</p>
+            <p><strong>Summary:</strong> HB 44 is now effective. It authorizes police departments to fill vacant positions <strong>without a competitive examination</strong> if the applicant possesses a valid OPOTA certificate. This streamlines hiring for lateral transfers.</p>
+            <a href="https://www.legislature.ohio.gov/legislation/136/hb44" target="_blank" class="btn">View Bill Text</a>
+        </div>
+
+        <div class="card">
+            <h2>Case Law: Extending Traffic Stops</h2>
+            <span class="citation-line"><span class="date-badge">JAN 2025</span> <em>State v. Dunlap</em>, 2025-Ohio-2323</span>
+            <p><strong>Topic:</strong> Scope of Detention</p>
+            <p><strong>Impact:</strong> The Ohio Supreme Court ruled that officers may extend a traffic stop to verify a driver's license status, even if the driver does not match the description of the registered owner.</p>
+            <a href="https://fedsoc.org/scdw/ohio-supreme-court-rules-police-can-extend-traffic-stops-to-verify-driver-s-license" target="_blank" class="btn">View Legal Analysis</a>
+        </div>
+
+        <div class="card fyi-card">
+            <h2>FYI: Special Reports & Federal Updates</h2>
+            <span class="citation-line"><span class="date-badge">RESOURCE</span> FBI / Supreme Court / Federal</span>
+            
+            <p><strong>Update:</strong> Evidence Generated by AI (Deepfakes)</p>
+            <p>Federal Advisory Committee proposed <strong>Rule 901(c)</strong> requires parties to disprove deepfakes if challenged.</p>
+            <a href="https://www.oblic.com/resources/oblic-news/01/21/2025/proposed-rules-ai-evidence/" target="_blank" class="btn">Read Rule</a>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+            <p><strong>Article:</strong> Statutes of Limitation in Sexual Assault Cases</p>
+            <a href="https://leb.fbi.gov/articles/featured-articles/statutes-of-limitation-in-sexual-assault-cases" target="_blank" class="btn">Read FBI Article</a>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+            <p><strong>Article:</strong> Technology and Communication</p>
+            <a href="https://leb.fbi.gov/articles/perspective/perspective-technology-and-communication" target="_blank" class="btn">Read FBI Article</a>
+        </div>
+
+        <div class="card archive-card">
+             <h2>Bulletin Archive</h2>
+             <input type="text" id="archiveSearch" onkeyup="filterArchive()" placeholder="Search archives..." style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+             <ul id="archiveList" style="list-style: none; padding: 0;">
+                <li style="padding: 15px; border-bottom: 1px solid #eee;">
+                    <strong style="color:#002147;">Case Law: Civil Stalking Orders</strong><br>
+                    <span style="color:#555; font-size:0.9em;">DEC 2025 - <em>Z.J. v. R.M.</em></span>
+                    <br>
+                    <a href="https://www.courtnewsohio.gov/cases/2025/SCO/1223/240340.asp" target="_blank" class="archive-link">Read Summary</a>
+                </li>
+             </ul>
+             <p id="noResults" style="display:none; color:red;">No results found.</p>
+        </div>
+
+    </main>
+
+    <aside>
+        <div class="sidebar">
+            <h3>Ohio Quick Links</h3>
+            <ul>
+                <li><a href="https://codes.ohio.gov/ohio-revised-code" target="_blank">Ohio Revised Code</a></li>
+                <li><a href="https://www.ohioattorneygeneral.gov/" target="_blank">Ohio Attorney General</a></li>
+                <li><a href="https://www.ohioattorneygeneral.gov/Law-Enforcement/Ohio-Peace-Officer-Training-Academy" target="_blank">Ohio POST / OPOTA</a></li>
+                <li><a href="https://search.usa.gov/" target="_blank">US Dept of Labor</a></li>
+                <li><a href="https://lris.com/" target="_blank">LRIS</a></li>
+            </ul>
+        </div>
+        <br>
+        <div class="sidebar locked">
+            <h3>Regional Archive</h3>
+            <p>Filter by County</p>
+            <br><br>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    &copy; 2026 Law Enforcement Bulletin
+</footer>
+
+<script>
+    function filterArchive() {
+        var input = document.getElementById('archiveSearch');
+        var filter = input.value.toUpperCase();
+        var ul = document.getElementById("archiveList");
+        var li = ul.getElementsByTagName('li');
+        var visibleCount = 0;
+        for (var i = 0; i < li.length; i++) {
+            var text = li[i].textContent || li[i].innerText;
+            if (text.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = ""; visibleCount++;
+            } else { li[i].style.display = "none"; }
+        }
+        document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
+    }
+</script>
+
+</body>
+</html>
