@@ -5,86 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Law Enforcement Bulletin - Select Jurisdiction</title>
     <style>
-        /* BASIC SETUP */
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #1a1a1a; 
-            color: white; 
-            text-align: center; 
-            margin: 0; 
-            padding: 20px;
-        }
-
-        /* HEADER */
-        header { 
-            border-bottom: 2px solid #C5B358; 
-            padding-bottom: 20px; 
-            margin-bottom: 30px; 
-        }
-        h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        p { color: #ccc; font-style: italic; }
-
-        /* TEXT BUTTONS (The Backup Navigation) */
-        .button-container {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; text-align: center; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
         
-        .state-btn {
-            display: inline-block;
-            background-color: #002147;
-            color: white;
-            padding: 15px 30px;
+        /* Header Blue & Gold */
+        header { background: linear-gradient(to right, #002147, #003366); color: white; padding: 40px; border-bottom: 5px solid #C5B358; }
+        h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; font-size: 2.5em; }
+        p { color: #ccc; font-style: italic; margin-top: 10px; }
+
+        /* Container */
+        .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+
+        /* Buttons */
+        .btn-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        
+        .state-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
             text-decoration: none;
-            font-weight: bold;
-            border: 2px solid #C5B358;
-            border-radius: 5px;
-            font-size: 1.2em;
+            color: #002147;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        .state-card:hover { transform: translateY(-5px); border-color: #C5B358; }
         
-        .state-btn:hover {
-            background-color: #C5B358;
-            color: black;
-        }
+        .state-card img { width: 80px; height: auto; margin-bottom: 15px; border: 1px solid #eee; }
+        .state-card h3 { margin: 0; font-size: 1.2em; }
 
-        /* MAP AREA (Simplified) */
-        #map-area {
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid #333;
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
+        footer { padding: 20px; background: #333; color: white; margin-top: auto; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Law Enforcement Bulletin</h1>
-        <p>Select your jurisdiction below</p>
+        <p>Select your jurisdiction for legal updates</p>
     </header>
 
-    <div class="button-container">
-        <a href="ohio.html" class="state-btn">OHIO</a>
-        <a href="pennsylvania.html" class="state-btn">PENNSYLVANIA</a>
+    <div class="container">
+        <h2>Available Jurisdictions</h2>
+        
+        <div class="btn-grid">
+            <a href="ohio.html" class="state-card">
+                <img src="Flag_of_Ohio.svg" alt="Ohio Flag">
+                <h3>OHIO</h3>
+            </a>
+
+            <a href="pennsylvania.html" class="state-card">
+                <img src="Flag_of_Pennsylvania.svg" alt="PA Flag">
+                <h3>PENNSYLVANIA</h3>
+            </a>
+        </div>
     </div>
 
-    <br><br>
-
-    <div id="map-area">
-        <p>Interactive Map</p>
-        <p>
-            <a href="ohio.html" style="color:#C5B358; font-size: 2em; text-decoration:none;">[ OH ]</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="pennsylvania.html" style="color:#C5B358; font-size: 2em; text-decoration:none;">[ PA ]</a>
-        </p>
-    </div>
-
-    <footer style="margin-top: 50px; color: #555;">
+    <footer>
         &copy; 2026 Law Enforcement Bulletin
     </footer>
 
