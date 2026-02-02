@@ -43,6 +43,16 @@
             padding: 40px 20px; 
         }
 
+        /* NEW INTRO TEXT STYLE */
+        .intro-text {
+            font-size: 1.3em;
+            color: #444;
+            font-weight: bold;
+            margin-bottom: 10px;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
         h2 { 
             color: #002147; 
             text-transform: uppercase; 
@@ -98,27 +108,29 @@
             transition: all 0.3s;
         }
         
-        /* SPECIAL SCOTUS BUTTON */
+        /* SPECIAL SCOTUS BUTTON (UPDATED: LIGHT BLUE) */
         .scotus-btn {
             display: block;
             width: 100%;
-            max-width: 450px; /* Matches dropdown width */
+            max-width: 450px; 
             padding: 15px;
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            text-align: left; /* Align text left to match dropdowns */
-            background-color: #002147; /* Navy Background */
-            color: white;
-            border: 2px solid #C5B358; /* Gold Border */
+            text-align: left; 
+            
+            /* NEW COLORS */
+            background-color: #87CEFA; /* Light Sky Blue */
+            color: #002147;            /* Dark Navy Text */
+            
+            border: 2px solid #002147; 
             border-radius: 5px;
             transition: all 0.3s;
-            box-sizing: border-box; /* Ensures padding doesn't mess up width */
+            box-sizing: border-box; 
         }
 
         .scotus-btn:hover {
-            background-color: #C5B358; /* Gold Background on hover */
-            color: #002147; /* Navy Text on hover */
+            background-color: #5bc0de; /* Slightly darker blue on hover */
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
@@ -141,6 +153,9 @@
     </header>
 
     <div class="container">
+        
+        <p class="intro-text">News, articles and cases regarding law enforcement</p>
+        
         <h2>Select Jurisdiction</h2>
 
         <div class="control-panel">
