@@ -3,205 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Enforcement Bulletin - Select Jurisdiction</title>
+    <title>Law Enforcement Bulletin</title>
     <style>
-        /* BASE STYLES */
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #f4f4f4; 
-            color: #333; 
-            text-align: center; 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
+        :root {
+            --police-blue: #002147;
+            --badge-gold: #FFD700;
+            --text-white: #FFFFFF;
+            --light-gray: #F4F4F4;
         }
         
-        /* HEADER SECTION */
-        header { 
-            background: linear-gradient(to right, #002147, #003366); 
-            padding: 50px 20px;
-            border-bottom: 5px solid #C5B358; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        .logo-img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
         }
 
-        /* MAIN CONTENT AREA */
-        .container { 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 40px 20px; 
+        /* HEADER & LOGO */
+        header {
+            background-color: var(--police-blue);
+            color: var(--text-white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--badge-gold);
         }
 
-        /* INTRO TEXT STYLE */
-        .intro-text {
-            font-size: 1.3em;
-            color: #444;
-            font-weight: bold;
-            margin-bottom: 10px;
-            max-width: 600px;
-            line-height: 1.4;
+        header img {
+            max-height: 120px;
+            width: auto;
         }
 
-        h2 { 
-            color: #002147; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            margin-bottom: 30px; 
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        /* CONTROL PANEL CONTAINER */
-        .control-panel {
-            display: flex;
-            flex-direction: column; 
-            gap: 25px;
-            align-items: center;
-            width: 100%;
-            max-width: 800px;
-            padding: 40px;
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        /* Individual Dropdown Groups */
-        .dropdown-group {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            width: 100%;
-            max-width: 450px; 
-        }
-        
-        .dropdown-label {
-            font-size: 0.9em;
-            font-weight: bold;
-            color: #555;
-            margin-bottom: 8px;
-            margin-left: 2px;
+        header h1 {
+            margin: 10px 0 0 0;
+            font-size: 2.5rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* SELECT MENU STYLING */
-        select {
-            padding: 15px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #aaa;
-            background-color: white;
-            color: #333;
-            width: 100%; 
-            cursor: pointer;
-            transition: all 0.3s;
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.8)), url('assets/hero-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
-        
-        /* SPECIAL SCOTUS BUTTON */
-        .scotus-btn {
-            display: block;
-            width: 100%;
-            max-width: 450px; 
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--badge-gold);
+        }
+
+        /* NAVIGATION GRID */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--police-blue);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            color: var(--police-blue);
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background-color: var(--police-blue);
+            color: var(--text-white);
+            padding: 10px 20px;
             text-decoration: none;
-            text-align: left; 
-            
-            /* Light Blue Background */
-            background-color: #87CEFA; 
-            color: #002147;            
-            
-            border: 2px solid #002147; 
             border-radius: 5px;
-            transition: all 0.3s;
-            box-sizing: border-box; 
+            font-weight: bold;
+            border: 2px solid var(--police-blue);
         }
 
-        .scotus-btn:hover {
-            background-color: #5bc0de; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        .btn:hover {
+            background-color: var(--badge-gold);
+            color: var(--police-blue);
+            border-color: var(--badge-gold);
         }
 
-        /* COLOR CODING FOR DROPDOWNS */
-        .select-state { border-left: 6px solid #C5B358; } /* Gold - State */
-        .select-circuit { border-left: 6px solid #002147; } /* Navy - Appeals */
-        .select-district { border-left: 6px solid #800000; } /* Maroon - District */
-
-        select:hover { border-color: #333; background-color: #fafafa; }
-        select:focus { outline: none; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
-
-        /* FOOTER */
-        footer { padding: 20px; background: #333; color: #aaa; margin-top: auto; font-size: 0.9em; }
+        footer {
+            background-color: var(--police-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="leb-logo-5.png" alt="Law Enforcement Bulletin Logo" class="logo-img">
+        <img src="assets/led-logo5.png" alt="Law Enforcement Bulletin Logo">
+        <h1>Law Enforcement Bulletin</h1>
     </header>
 
+    <div class="hero">
+        <h2>Legal Updates for Ohio & Pennsylvania</h2>
+        <p>Serving the Law Enforcement Community with Timely Case Law & Legislation</p>
+    </div>
+
     <div class="container">
-        
-        <p class="intro-text">News, articles and cases regarding law enforcement</p>
-        
-        <h2>Select Jurisdiction</h2>
-
-        <div class="control-panel">
+        <div class="grid">
             
-            <div class="dropdown-group">
-                <span class="dropdown-label">📍 State / Territory</span>
-                <select class="select-state" onchange="if (this.value) window.location.href=this.value">
-                    <option value="" disabled selected>Select State...</option>
-                    <option value="ohio.html">Ohio</option>
-                    <option value="pennsylvania.html">Pennsylvania</option>
-                    <option value="" disabled>-- More Coming Soon --</option>
-                </select>
+            <div class="card">
+                <div class="card-content">
+                    <h3>U.S. Supreme Court</h3>
+                    <p>Recent rulings affecting law enforcement nationwide.</p>
+                    <a href="scotus/scotus.html" class="btn">View SCOTUS Updates</a>
+                </div>
             </div>
 
-            <a href="scotus.html" class="scotus-btn">
-                ⚖️ &nbsp; U.S. Supreme Court
-            </a>
-
-            <div class="dropdown-group">
-                <span class="dropdown-label">📜 U.S. Circuit Courts (Appellate)</span>
-                <select class="select-circuit" onchange="if (this.value) window.location.href=this.value">
-                    <option value="" disabled selected>Select Circuit...</option>
-                    <option value="#">3rd Circuit (PA/NJ/DE/VI)</option>
-                    <option value="#">6th Circuit (OH/MI/KY/TN)</option>
-                    <option value="" disabled>-- More Coming Soon --</option>
-                </select>
+            <div class="card">
+                <div class="card-content">
+                    <h3>6th Circuit Court</h3>
+                    <p>Federal decisions covering Ohio, Michigan, Kentucky, and Tennessee.</p>
+                    <a href="circuit_courts/sixth_circuit.html" class="btn">View 6th Circuit</a>
+                </div>
             </div>
 
-            <div class="dropdown-group">
-                <span class="dropdown-label">🏛️ U.S. Federal Judicial Districts</span>
-                <select class="select-district" onchange="if (this.value) window.location.href=this.value">
-                    <option value="" disabled selected>Select District Court...</option>
-                    <option value="#">Northern District of Ohio (N.D. Ohio)</option>
-                    <option value="#">Southern District of Ohio (S.D. Ohio)</option>
-                    <option value="#">Western District of PA (W.D. Pa.)</option>
-                    <option value="#">Middle District of PA (M.D. Pa.)</option>
-                    <option value="#">Eastern District of PA (E.D. Pa.)</option>
-                    <option value="" disabled>-- More Coming Soon --</option>
-                </select>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Ohio Updates</h3>
+                    <p>ORC changes, state supreme court rulings, and local legislation.</p>
+                    <a href="states/ohio.html" class="btn">View Ohio News</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Pennsylvania Updates</h3>
+                    <p>Statutory updates and case law for PA officers.</p>
+                    <a href="states/pennsylvania.html" class="btn">View PA News</a>
+                </div>
             </div>
 
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Law Enforcement Bulletin | Updates Weekly
+        &copy; 2026 Law Enforcement Bulletin. All Rights Reserved.
     </footer>
 
 </body>
