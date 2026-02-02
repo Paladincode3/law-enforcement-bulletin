@@ -119,7 +119,7 @@
         .case-topic { font-weight: bold; color: #C5B358; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
         .summary-box { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 3px solid #ccc; line-height: 1.6; margin-bottom: 20px; }
         
-        /* SINGLE ACTION BUTTON */
+        /* ACTION BUTTON STYLES */
         .btn-container { margin-top: 15px; }
         
         .btn-opinion {
@@ -136,8 +136,18 @@
             border: 1px solid #002147;
             transition: background 0.2s;
         }
-        
         .btn-opinion:hover { background-color: #C5B358; color: #002147; border-color: #C5B358; }
+
+        /* WARNING STYLE FOR UNPUBLISHED OPINIONS */
+        .btn-pending {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        .btn-pending:hover {
+            background-color: #ffeeba;
+            color: #533f03;
+        }
 
         footer { text-align: center; padding: 20px; background: #333; color: #aaa; margin-top: auto; }
     </style>
@@ -181,11 +191,11 @@
                 </div>
             </div>
             <div class="summary-box">
-                <strong>Holding:</strong> The Supreme Court unanimously struck down the "Moment of Threat" doctrine. Courts must now consider the "totality of circumstances" leading up to a use of force incident, not just the split-second before the trigger was pulled.
+                <strong>Holding:</strong> The Supreme Court unanimously struck down the "Moment of Threat" doctrine. Courts must now consider the "totality of circumstances" leading up to a use of force incident.
             </div>
             <div class="btn-container">
-                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1239.html" target="_blank" class="btn-opinion">
-                    📄 View Official Docket / Status
+                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1239.html" target="_blank" class="btn-opinion btn-pending">
+                    ⚠️ Opinion Not Yet Published (View Docket)
                 </a>
             </div>
         </div>
@@ -202,11 +212,11 @@
                 </div>
             </div>
             <div class="summary-box">
-                <strong>Holding:</strong> The Court ruled that majority-group plaintiffs (e.g., straight/white employees) do not need to meet a higher "background circumstances" burden to prove discrimination under Title VII. The standard is now equal for all.
+                <strong>Holding:</strong> The Court ruled that majority-group plaintiffs do not need to meet a higher "background circumstances" burden to prove discrimination under Title VII.
             </div>
             <div class="btn-container">
-                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1039.html" target="_blank" class="btn-opinion">
-                    📄 View Official Docket / Status
+                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1039.html" target="_blank" class="btn-opinion btn-pending">
+                    ⚠️ Opinion Not Yet Published (View Docket)
                 </a>
             </div>
         </div>
