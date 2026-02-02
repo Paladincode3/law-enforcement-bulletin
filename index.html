@@ -21,28 +21,40 @@
         header { 
             background: linear-gradient(to right, #002147, #003366); 
             color: white; 
-            padding: 50px 20px; /* Increased padding for better look */
+            padding: 40px 20px; 
             border-bottom: 5px solid #C5B358; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         /* LOGO STYLING */
         .logo-img {
-            max-width: 350px;  /* INCREASED SIZE (Was 180px) */
-            width: 100%;       /* Ensures it shrinks on mobile phones */
+            max-width: 350px;
+            width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 10px auto; /* Centers the image */
+            margin: 0 auto 20px auto;
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
         }
 
-        /* Subtitle Styling */
-        p { 
-            color: #ddd; 
-            font-style: italic; 
-            margin-top: 10px; 
-            font-size: 1.1em;
+        /* DROPDOWN MENU STYLING */
+        .nav-select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #C5B358;
+            background-color: white;
+            color: #002147;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 300px;
         }
+        .nav-select:hover {
+            background-color: #f0f0f0;
+        }
+
+        p { color: #ddd; font-style: italic; margin-top: 10px; font-size: 1.1em; }
 
         /* MAIN CONTENT AREA */
         .container { 
@@ -57,12 +69,7 @@
         h2 { color: #002147; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 30px; }
 
         /* BUTTON GRID */
-        .btn-grid { 
-            display: flex; 
-            gap: 30px; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-        }
+        .btn-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
         
         /* STATE CARDS */
         .state-card {
@@ -79,32 +86,12 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-        
-        .state-card:hover { 
-            transform: translateY(-5px); 
-            border-color: #C5B358; 
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* State Flag Images */
-        .state-card img { 
-            width: 100px; 
-            height: auto; 
-            margin-bottom: 15px; 
-            border: 1px solid #eee; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
+        .state-card:hover { transform: translateY(-5px); border-color: #C5B358; box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+        .state-card img { width: 100px; height: auto; margin-bottom: 15px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .state-card h3 { margin: 0; font-size: 1.2em; font-weight: bold; }
 
         /* FOOTER */
-        footer { 
-            padding: 20px; 
-            background: #333; 
-            color: #aaa; 
-            margin-top: auto; 
-            font-size: 0.9em;
-        }
+        footer { padding: 20px; background: #333; color: #aaa; margin-top: auto; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -112,7 +99,13 @@
     <header>
         <img src="leb-logo-5.png" alt="Law Enforcement Bulletin Logo" class="logo-img">
         
-        <p>Select your jurisdiction for legal updates</p>
+        <select class="nav-select" onchange="if (this.value) window.location.href=this.value">
+            <option value="" disabled selected>Select Jurisdiction...</option>
+            <option value="index.html">🏠 Home / Index</option>
+            <option value="ohio.html">Ohio</option>
+            <option value="pennsylvania.html">Pennsylvania</option>
+            <option value="" disabled>-- More Coming Soon --</option>
+        </select>
     </header>
 
     <div class="container">
