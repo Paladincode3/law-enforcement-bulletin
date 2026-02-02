@@ -17,7 +17,7 @@
             min-height: 100vh; 
         }
         
-        /* HEADER SECTION - LOGO ONLY */
+        /* HEADER SECTION */
         header { 
             background: linear-gradient(to right, #002147, #003366); 
             padding: 50px 20px;
@@ -26,7 +26,7 @@
         }
         
         .logo-img {
-            max-width: 350px;
+            max-width: 400px;
             width: 100%;
             height: auto;
             display: block;
@@ -47,82 +47,66 @@
             color: #002147; 
             text-transform: uppercase; 
             letter-spacing: 1px;
-            margin-bottom: 20px; 
+            margin-bottom: 30px; 
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
         }
 
-        /* CONTROL PANEL (The Two Dropdowns) */
+        /* CONTROL PANEL CONTAINER */
         .control-panel {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap; /* Stacks on phones */
+            flex-direction: column; /* Stack the groups vertically */
+            gap: 30px;
+            align-items: center;
             width: 100%;
             max-width: 800px;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #ddd;
+            padding: 40px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
+        /* Individual Dropdown Groups */
         .dropdown-group {
             display: flex;
             flex-direction: column;
             align-items: start;
+            width: 100%;
+            max-width: 400px; /* Limits width for clean look */
         }
         
         .dropdown-label {
-            font-size: 0.8em;
+            font-size: 0.9em;
             font-weight: bold;
-            color: #666;
-            margin-bottom: 5px;
+            color: #555;
+            margin-bottom: 8px;
             margin-left: 2px;
+            text-transform: uppercase;
         }
 
         /* SELECT MENU STYLING */
         select {
-            padding: 12px;
+            padding: 15px;
             font-size: 16px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #aaa;
             background-color: white;
             color: #333;
-            width: 300px; /* Fixed width for consistency */
+            width: 100%; /* Fills the group width */
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
         
-        /* Specific Colors for Distinction */
-        .select-state { border-left: 5px solid #C5B358; } /* Gold Stripe */
-        .select-fed { border-left: 5px solid #002147; }   /* Blue Stripe */
+        /* COLOR CODING FOR CLARITY */
+        .select-state { border-left: 6px solid #C5B358; } /* Gold - State */
+        .select-circuit { border-left: 6px solid #002147; } /* Navy - Appeals */
+        .select-district { border-left: 6px solid #800000; } /* Maroon - District */
 
-        select:hover { background-color: #f9f9f9; }
+        select:hover { border-color: #333; background-color: #fafafa; }
+        select:focus { outline: none; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
 
-        /* VISUAL BUTTON GRID */
-        .btn-grid { 
-            display: flex; 
-            gap: 30px; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-        }
-        
-        .state-card {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 25px;
-            width: 220px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-decoration: none;
-            color: #002147;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .state-card:hover { transform: translateY(-5px); border-color: #C5B358; box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
-        .state-card img { width: 100px; height: auto; margin-bottom: 15px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .state-card h3 { margin: 0; font-size: 1.2em; font-weight: bold; }
-
+        /* FOOTER */
         footer { padding: 20px; background: #333; color: #aaa; margin-top: auto; font-size: 0.9em; }
     </style>
 </head>
@@ -138,7 +122,7 @@
         <div class="control-panel">
             
             <div class="dropdown-group">
-                <span class="dropdown-label">STATE / TERRITORY</span>
+                <span class="dropdown-label">📍 State / Territory</span>
                 <select class="select-state" onchange="if (this.value) window.location.href=this.value">
                     <option value="" disabled selected>Select State...</option>
                     <option value="ohio.html">Ohio</option>
@@ -148,28 +132,29 @@
             </div>
 
             <div class="dropdown-group">
-                <span class="dropdown-label">FEDERAL CIRCUIT</span>
-                <select class="select-fed" onchange="if (this.value) window.location.href=this.value">
-                    <option value="" disabled selected>Select Federal Region...</option>
+                <span class="dropdown-label">⚖️ U.S. Circuit Courts (Appellate)</span>
+                <select class="select-circuit" onchange="if (this.value) window.location.href=this.value">
+                    <option value="" disabled selected>Select Circuit...</option>
                     <option value="#">U.S. Supreme Court (SCOTUS)</option>
-                    <option value="#">3rd Circuit (PA/NJ/DE)</option>
+                    <option value="#">3rd Circuit (PA/NJ/DE/VI)</option>
                     <option value="#">6th Circuit (OH/MI/KY/TN)</option>
                     <option value="" disabled>-- More Coming Soon --</option>
                 </select>
             </div>
 
-        </div>
+            <div class="dropdown-group">
+                <span class="dropdown-label">🏛️ U.S. Federal Judicial Districts</span>
+                <select class="select-district" onchange="if (this.value) window.location.href=this.value">
+                    <option value="" disabled selected>Select District Court...</option>
+                    <option value="#">Northern District of Ohio (N.D. Ohio)</option>
+                    <option value="#">Southern District of Ohio (S.D. Ohio)</option>
+                    <option value="#">Western District of PA (W.D. Pa.)</option>
+                    <option value="#">Middle District of PA (M.D. Pa.)</option>
+                    <option value="#">Eastern District of PA (E.D. Pa.)</option>
+                    <option value="" disabled>-- More Coming Soon --</option>
+                </select>
+            </div>
 
-        <div class="btn-grid">
-            <a href="ohio.html" class="state-card">
-                <img src="state-flags/Flag_of_Ohio.svg" alt="Ohio Flag">
-                <h3>OHIO</h3>
-            </a>
-
-            <a href="pennsylvania.html" class="state-card">
-                <img src="state-flags/Flag_of_Pennsylvania.svg" alt="PA Flag">
-                <h3>PENNSYLVANIA</h3>
-            </a>
         </div>
     </div>
 
