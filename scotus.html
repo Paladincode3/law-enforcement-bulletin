@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOTUS Updates - Law Enforcement Bulletin</title>
+    <style>
+        /* BASE STYLES */
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            color: #333; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+
+        /* UNIVERSAL NAV BAR */
+        nav {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #C5B358;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-link:hover { color: white; }
+
+        .nav-select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #C5B358;
+            background: #333;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* HERO HEADER (SCOTUS THEME) */
+        header { 
+            background: linear-gradient(to bottom, #002147, #001a33); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        .motto { font-size: 1.2em; color: #C5B358; font-style: italic; margin-top: 10px; display: block; }
+        .term-date { background: #C5B358; color: #002147; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; display: inline-block; margin-top: 15px; }
+
+        /* MAIN CONTENT */
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+            flex: 1; 
+        }
+
+        .section-title {
+            border-left: 5px solid #002147;
+            padding-left: 15px;
+            color: #002147;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        /* CASE CARDS */
+        .case-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #87CEFA; /* Light Blue for SCOTUS */
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .case-title { font-size: 1.5em; color: #002147; margin: 0; font-weight: bold; }
+        .case-citation { color: #666; font-size: 0.9em; font-family: "Courier New", monospace; background: #f9f9f9; padding: 5px; border-radius: 4px; }
+        
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-decided { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; } /* Green */
+        .badge-pending { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; } /* Yellow */
+
+        .case-topic { font-weight: bold; color: #555; margin-bottom: 10px; }
+        .summary-box { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 3px solid #ccc; line-height: 1.6; }
+        
+        /* KEY TAKEAWAY BOX */
+        .takeaway {
+            margin-top: 20px;
+            background: #e3f2fd;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .takeaway span { text-decoration: underline; }
+
+        footer { text-align: center; padding: 20px; background: #333; color: #aaa; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-link">
+            <span>🏠</span> LEB Home
+        </a>
+        <select class="nav-select" onchange="if (this.value) window.location.href=this.value">
+            <option value="" disabled selected>Quick Switch...</option>
+            <option value="index.html">Home</option>
+            <option value="ohio.html">Ohio</option>
+            <option value="pennsylvania.html">Pennsylvania</option>
+            <option value="scotus.html">⚖️ U.S. Supreme Court</option>
+        </select>
+    </nav>
+
+    <header>
+        <div style="font-size: 3em; margin-bottom: 10px;">⚖️</div>
+        <h1>Supreme Court of the United States</h1>
+        <span class="motto">"Equal Justice Under Law"</span>
+        <br>
+        <div class="term-date">JANUARY 2026 TERM UPDATE</div>
+    </header>
+
+    <div class="container">
+
+        <h2 class="section-title">Decisions Issued (Jan 2026)</h2>
+
+        <div class="case-card">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">Case v. Montana</h3>
+                    <div class="case-topic">Topic: Warrantless Entry / Emergency Aid Doctrine</div>
+                </div>
+                <div>
+                    <span class="case-citation">No. 24-624</span>
+                    <span class="badge badge-decided">DECIDED: JAN 14, 2026</span>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <strong>Facts:</strong> Police responded to a call regarding a suicidal subject. Officers entered the home without a warrant to render aid. The defendant argued police needed "probable cause" to believe a crime was occurring or aid was needed.<br><br>
+                <strong>The Ruling:</strong> The Court held (Unanimous) that police <u>do not</u> need probable cause to enter a home for emergency aid. They only need an "objectively reasonable basis" to believe an occupant is seriously injured or threatened with injury.
+            </div>
+
+            <div class="takeaway">
+                <span>LE TAKEAWAY:</span> The "Emergency Aid" exception is distinct from criminal investigation. If you have reasonable facts suggesting someone is hurt or dying inside, you may enter to help. You do not need the higher standard of probable cause required for a criminal raid.
+            </div>
+        </div>
+
+
+        <h2 class="section-title">Certiorari Granted (Upcoming Cases)</h2>
+
+        <div class="case-card" style="border-left-color: #C5B358;">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">Chatrie v. United States</h3>
+                    <div class="case-topic">Topic: "Geofence" Warrants & Digital Privacy</div>
+                </div>
+                <div>
+                    <span class="case-citation">No. 24-118</span>
+                    <span class="badge badge-pending">GRANTED: JAN 16, 2026</span>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <strong>The Issue:</strong> Whether "Geofence Warrants" (ordering Google/Apple to identify <em>everyone</em> in a geographic area during a crime) violate the Fourth Amendment prohibition against "General Warrants."<br><br>
+                <strong>Why it Matters:</strong> This decision will determine if investigators can continue using location-dump warrants to solve crimes where there are no specific suspects yet.
+            </div>
+
+            <div class="takeaway" style="background-color: #fff3cd; color: #856404;">
+                <span>STATUS:</span> Argument likely Spring 2026. Prepare for potential changes to digital warrant applications.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Law Enforcement Bulletin | Updates Weekly
+    </footer>
+
+</body>
+</html>
