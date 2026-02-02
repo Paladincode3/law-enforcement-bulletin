@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming SCOTUS Cases - Cert Granted</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* NAV BAR */
+        nav { background: #1a1a1a; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #C5B358; position: sticky; top: 0; z-index: 1000; }
+        .nav-link { color: #ccc; text-decoration: none; font-weight: bold; font-size: 1.1em; display: flex; align-items: center; gap: 10px; }
+        .nav-link:hover { color: white; }
+        .back-btn { background: #C5B358; color: #002147; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+
+        /* HEADER */
+        header { background: linear-gradient(to bottom, #002147, #001a33); color: white; text-align: center; padding: 40px 20px; border-bottom: 1px solid #ddd; }
+        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        .motto { font-size: 1.2em; color: #C5B358; font-style: italic; margin-top: 10px; display: block; }
+
+        /* CONTENT */
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; flex: 1; }
+        
+        /* CARDS */
+        .case-card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 6px solid #C5B358; /* Gold for Pending */ }
+        .case-title { font-size: 1.5em; color: #002147; margin: 0; font-weight: bold; }
+        .case-citation { color: #666; font-size: 0.9em; font-family: "Courier New", monospace; background: #f9f9f9; padding: 5px; border-radius: 4px; }
+        .badge-pending { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; float: right; }
+        .summary-box { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 3px solid #ccc; line-height: 1.6; margin-top: 15px; }
+
+        footer { text-align: center; padding: 20px; background: #333; color: #aaa; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="scotus.html" class="nav-link">⬅ Back to Decisions</a>
+        <a href="index.html" class="back-btn">🏠 Home</a>
+    </nav>
+
+    <header>
+        <div style="font-size: 3em; margin-bottom: 10px;">⚖️</div>
+        <h1>Upcoming Cases</h1>
+        <span class="motto">Certiorari Granted - Watch List</span>
+    </header>
+
+    <div class="container">
+
+        <div class="case-card">
+            <span class="badge-pending">GRANTED: Jan 16, 2026</span>
+            <h3 class="case-title">Chatrie v. United States</h3>
+            <span class="case-citation">No. 24-118</span>
+            
+            <div class="summary-box">
+                <strong>The Issue:</strong> Whether "Geofence Warrants" (ordering Google to identify all users in a geographic area) violate the Fourth Amendment prohibition against General Warrants.
+            </div>
+        </div>
+
+        <div class="case-card">
+            <span class="badge-pending">GRANTED: Jan 22, 2025</span>
+            <h3 class="case-title">Glossip v. Oklahoma</h3>
+            <span class="case-citation">No. 22-7466</span>
+            
+            <div class="summary-box">
+                <strong>The Issue:</strong> Whether the state's suppression of exculpatory evidence (Brady violation) and the key witness's false testimony require overturning a capital murder conviction.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>&copy; 2026 Law Enforcement Bulletin</footer>
+</body>
+</html>
