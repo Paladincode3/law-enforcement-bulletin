@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOTUS Updates - Law Enforcement Bulletin</title>
+    <style>
+        :root { --police-blue: #003366; --badge-gold: #D4AF37; --light-bg: #f8f9fa; --text-gray: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--light-bg); color: var(--text-gray); }
+        
+        /* Header */
+        header { background-color: var(--police-blue); color: white; padding: 1rem 0; border-bottom: 4px solid var(--badge-gold); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { height: 50px; width: auto; }
+        .logo-area h3 { margin: 0; font-size: 1.5rem; color: white; }
+        .nav-links { list-style: none; display: flex; gap: 20px; padding: 0; margin: 0; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 1.1rem; }
+        .nav-links a:hover { color: var(--badge-gold); }
+        
+        /* Content */
+        h1 { color: var(--police-blue); border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-top: 2rem; }
+        .term-header { background-color: #e9ecef; padding: 10px 15px; border-left: 5px solid var(--police-blue); margin-top: 2rem; margin-bottom: 1rem; font-weight: bold; font-size: 1.2rem; }
+        
+        /* Cards */
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .case-card { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .case-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-color: var(--badge-gold); }
+        .case-title { font-size: 1.3rem; color: var(--police-blue); margin-bottom: 5px; font-weight: 700; margin-top: 0; }
+        .case-topic { color: #b08d28; font-weight: bold; font-size: 0.95rem; margin-bottom: 15px; display: block; }
+        .case-summary { margin-bottom: 20px; flex-grow: 1; }
+        
+        /* Buttons */
+        .btn { display: block; text-align: center; padding: 10px; border-radius: 4px; text-decoration: none; font-weight: 600; margin-top: auto; }
+        .btn-pdf { background-color: var(--police-blue); color: white; }
+        .btn-docket { background-color: #6c757d; color: white; }
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="../assets/led-logo5.png" alt="LEB Logo">
+                    <h3>Law Enforcement Bulletin</h3>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">SCOTUS</a></li>
+                    <li><a href="../circuits/sixth_circuit.html">6th Circuit</a></li>
+                    <li><a href="../states/ohio.html">Ohio</a></li>
+                    <li><a href="../states/pennsylvania.html">PA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Supreme Court Watch (2020-2026)</h1>
+
+        <div class="term-header">2024-2025 Term (Recent & Pending)</div>
+        <div class="case-grid">
+            
+            <article class="case-card">
+                <h2 class="case-title">Barnes v. Felix</h2>
+                <span class="case-topic">Use of Force / Moment of Threat</span>
+                <p class="case-summary"><strong>Issue:</strong> Whether the Fourth Amendment analysis of an officer's use of deadly force is limited strictly to the "moment of the threat," or if the officer's pre-seizure conduct can be considered.</p>
+                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1239.html" class="btn btn-docket" target="_blank">View Docket</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Ames v. Ohio Dept. of Youth Services</h2>
+                <span class="case-topic">Title VII / Reverse Discrimination</span>
+                <p class="case-summary"><strong>Issue:</strong> Clarifies the burden of proof for majority-group plaintiffs (reverse discrimination) in employment discrimination claims.</p>
+                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-1039.html" class="btn btn-docket" target="_blank">View Docket</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Garland v. VanDerStok</h2>
+                <span class="case-topic">Firearms / "Ghost Guns"</span>
+                <p class="case-summary"><strong>Issue:</strong> Addressed the ATF's authority to regulate firearm parts kits (frames and receivers) as "firearms" under the Gun Control Act of 1968.</p>
+                <a href="https://www.supremecourt.gov/docket/docketfiles/html/public/23-852.html" class="btn btn-docket" target="_blank">View Docket</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Chiaverini v. City of Napoleon</h2>
+                <span class="case-topic">Malicious Prosecution</span>
+                <p class="case-summary"><strong>Holding:</strong> Even if probable cause exists for one charge, a Fourth Amendment malicious prosecution claim can still proceed regarding other charges that lacked probable cause.</p>
+                <a href="https://www.supremecourt.gov/opinions/23pdf/23-50_d18e.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+        </div>
+
+        <div class="term-header">Key Precedent (2020-2023)</div>
+        <div class="case-grid">
+
+            <article class="case-card">
+                <h2 class="case-title">United States v. Rahimi (2024)</h2>
+                <span class="case-topic">Firearms / Domestic Violence</span>
+                <p class="case-summary"><strong>Holding:</strong> Confirmed that individuals subject to domestic violence restraining orders can be temporarily disarmed consistent with the Second Amendment.</p>
+                <a href="https://www.supremecourt.gov/opinions/23pdf/22-915_8o6a.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Vega v. Tekoh (2022)</h2>
+                <span class="case-topic">Miranda Rights / Civil Liability</span>
+                <p class="case-summary"><strong>Holding:</strong> A violation of <em>Miranda</em> rules does not provide a basis for a §1983 civil rights lawsuit. Miranda is a prophylactic rule, not a constitutional right for civil liability purposes.</p>
+                <a href="https://www.supremecourt.gov/opinions/21pdf/21-499_gfbh.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">N.Y. State Rifle & Pistol v. Bruen (2022)</h2>
+                <span class="case-topic">Firearms / Concealed Carry</span>
+                <p class="case-summary"><strong>Holding:</strong> Struck down "may issue" concealed carry regimes. Established that gun regulations must be consistent with the nation's "historical tradition."</p>
+                <a href="https://www.supremecourt.gov/opinions/21pdf/20-843_7j80.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Torres v. Madrid (2021)</h2>
+                <span class="case-topic">Use of Force / Seizure Definition</span>
+                <p class="case-summary"><strong>Holding:</strong> The application of physical force to the body of a person with intent to restrain is a "seizure" even if the person does not submit and escapes.</p>
+                <a href="https://www.supremecourt.gov/opinions/20pdf/19-292_21p3.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Lange v. California (2021)</h2>
+                <span class="case-topic">Warrantless Entry / Hot Pursuit</span>
+                <p class="case-summary"><strong>Holding:</strong> Pursuit of a fleeing misdemeanor suspect does not <em>categorically</em> justify warrantless entry into a home. Officers must demonstrate exigent circumstances.</p>
+                <a href="https://www.supremecourt.gov/opinions/20pdf/20-18_m648.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+            <article class="case-card">
+                <h2 class="case-title">Caniglia v. Strom (2021)</h2>
+                <span class="case-topic">Community Caretaking Exception</span>
+                <p class="case-summary"><strong>Holding:</strong> The "community caretaking" exception is limited to vehicles and does not justify warrantless entry into a private home to seize weapons for mental health reasons.</p>
+                <a href="https://www.supremecourt.gov/opinions/20pdf/20-157_8mjp.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+            
+             <article class="case-card">
+                <h2 class="case-title">Kansas v. Glover (2020)</h2>
+                <span class="case-topic">Traffic Stops / Reasonable Suspicion</span>
+                <p class="case-summary"><strong>Holding:</strong> An investigative stop is reasonable based on a revoked license check of the registered owner, provided the officer lacks information negating that the owner is the driver.</p>
+                <a href="https://www.supremecourt.gov/opinions/19pdf/18-556_e1pf.pdf" class="btn btn-pdf" target="_blank">Read Opinion (PDF)</a>
+            </article>
+
+        </div>
+    </div>
+</body>
+</html>
