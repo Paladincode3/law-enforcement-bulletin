@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Circuit Updates</title>
+    <style>
+        :root { --police-blue: #003366; --badge-gold: #D4AF37; --light-bg: #f8f9fa; --text-gray: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--light-bg); color: var(--text-gray); }
+        header { background-color: var(--police-blue); color: white; padding: 1rem 0; border-bottom: 4px solid var(--badge-gold); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .nav-links { list-style: none; display: flex; gap: 20px; padding: 0; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+        .case-card { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 25px; margin-bottom: 20px; }
+        .case-title { color: var(--police-blue); margin-top: 0; }
+        .btn { display: inline-block; background-color: var(--police-blue); color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h3>Law Enforcement Bulletin</h3>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../scotus/index.html">SCOTUS</a></li>
+                    <li><a href="../circuits/sixth_circuit.html">6th Circuit</a></li>
+                    <li><a href="../states/ohio.html">Ohio</a></li>
+                    <li><a href="../states/pennsylvania.html">PA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container" style="padding-top: 2rem;">
+        <h1>6th Circuit Court of Appeals (OH, KY, MI, TN)</h1>
+        
+        <div class="case-card">
+            <h2>Salter v. City of Detroit (2025)</h2>
+            <p><strong>Topic:</strong> Brady Violations / Officer Liability</p>
+            <p><strong>Holding:</strong> Affirmed that officers have a clearly established duty to disclose material exculpatory evidence. Failure to do so eliminates qualified immunity.</p>
+        </div>
 
+        <div class="case-card">
+            <h2>Novak v. City of Parma (2024)</h2>
+            <p><strong>Topic:</strong> Free Speech / Parody</p>
+            <p><strong>Holding:</strong> Arresting a suspect solely for creating a parody police Facebook page without probable cause of a true crime violates the First Amendment.</p>
+        </div>
+        
+        <div class="case-card">
+            <h2>Mercer v. Athens County (2023)</h2>
+            <p><strong>Topic:</strong> Excessive Force / Taser</p>
+            <p><strong>Holding:</strong> Using a Taser on a non-resisting or passively resisting suspect is a violation of clearly established law.</p>
+        </div>
+    </div>
+</body>
+</html>
