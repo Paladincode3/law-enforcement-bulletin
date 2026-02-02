@@ -51,7 +51,7 @@
             cursor: pointer;
         }
 
-        /* HERO HEADER (SCOTUS THEME) */
+        /* HERO HEADER */
         header { 
             background: linear-gradient(to bottom, #002147, #001a33); 
             color: white; 
@@ -77,7 +77,10 @@
             padding-left: 15px;
             color: #002147;
             margin-bottom: 25px;
+            margin-top: 40px;
             font-size: 1.8em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
         }
 
         /* CASE CARDS */
@@ -88,8 +91,10 @@
             padding: 25px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 5px solid #87CEFA; /* Light Blue for SCOTUS */
+            border-left: 6px solid #87CEFA; /* Light Blue for SCOTUS */
+            transition: transform 0.2s;
         }
+        .case-card:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         .case-header {
             display: flex;
@@ -105,29 +110,34 @@
         .case-title { font-size: 1.5em; color: #002147; margin: 0; font-weight: bold; }
         .case-citation { color: #666; font-size: 0.9em; font-family: "Courier New", monospace; background: #f9f9f9; padding: 5px; border-radius: 4px; }
         
-        .badge {
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .badge-decided { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; } /* Green */
-        .badge-pending { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; } /* Yellow */
+        /* Date Badges */
+        .badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
+        .badge-2025 { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; } 
+        .badge-2024 { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
+        .badge-pending { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; } /* Yellow for Pending */
 
-        .case-topic { font-weight: bold; color: #555; margin-bottom: 10px; }
-        .summary-box { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 3px solid #ccc; line-height: 1.6; }
+        .case-topic { font-weight: bold; color: #C5B358; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
+        .summary-box { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 3px solid #ccc; line-height: 1.6; margin-bottom: 20px; }
         
-        /* KEY TAKEAWAY BOX */
-        .takeaway {
-            margin-top: 20px;
-            background: #e3f2fd;
-            color: #0c5460;
-            padding: 15px;
+        /* SINGLE ACTION BUTTON */
+        .btn-container { margin-top: 15px; }
+        
+        .btn-opinion {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            font-size: 1em;
+            background-color: #002147; 
+            color: white; 
+            border: 1px solid #002147;
+            transition: background 0.2s;
         }
-        .takeaway span { text-decoration: underline; }
+        
+        .btn-opinion:hover { background-color: #C5B358; color: #002147; border-color: #C5B358; }
 
         footer { text-align: center; padding: 20px; background: #333; color: #aaa; margin-top: auto; }
     </style>
@@ -149,60 +159,133 @@
 
     <header>
         <div style="font-size: 3em; margin-bottom: 10px;">⚖️</div>
-        <h1>Supreme Court of the United States</h1>
-        <span class="motto">"Equal Justice Under Law"</span>
+        <h1>Supreme Court Decisions</h1>
+        <span class="motto">Law Enforcement Case Tracker</span>
         <br>
-        <div class="term-date">JANUARY 2026 TERM UPDATE</div>
+        <div class="term-date">CURRENT THROUGH: 2025/2026 TERM</div>
     </header>
 
     <div class="container">
 
-        <h2 class="section-title">Decisions Issued (Jan 2026)</h2>
+        <h2 class="section-title">2025 Decisions</h2>
 
         <div class="case-card">
             <div class="case-header">
                 <div>
-                    <h3 class="case-title">Case v. Montana</h3>
-                    <div class="case-topic">Topic: Warrantless Entry / Emergency Aid Doctrine</div>
+                    <h3 class="case-title">Barnes v. Felix</h3>
+                    <div class="case-topic">Use of Force / "Moment of Threat" Doctrine</div>
                 </div>
                 <div>
-                    <span class="case-citation">No. 24-624</span>
-                    <span class="badge badge-decided">DECIDED: JAN 14, 2026</span>
+                    <span class="case-citation">No. 23-1239</span>
+                    <span class="badge badge-2025">DECIDED: MAY 15, 2025</span>
                 </div>
             </div>
-
             <div class="summary-box">
-                <strong>Facts:</strong> Police responded to a call regarding a suicidal subject. Officers entered the home without a warrant to render aid. The defendant argued police needed "probable cause" to believe a crime was occurring or aid was needed.<br><br>
-                <strong>The Ruling:</strong> The Court held (Unanimous) that police <u>do not</u> need probable cause to enter a home for emergency aid. They only need an "objectively reasonable basis" to believe an occupant is seriously injured or threatened with injury.
+                <strong>Holding:</strong> The Supreme Court unanimously struck down the "Moment of Threat" doctrine. Courts must now consider the "totality of circumstances" leading up to a use of force incident, not just the split-second before the trigger was pulled.
             </div>
+            <div class="btn-container">
+                <a href="https://www.supremecourt.gov/opinions/24pdf/23-1239.pdf" target="_blank" class="btn-opinion">
+                    📄 Read Court Opinions
+                </a>
+            </div>
+        </div>
 
-            <div class="takeaway">
-                <span>LE TAKEAWAY:</span> The "Emergency Aid" exception is distinct from criminal investigation. If you have reasonable facts suggesting someone is hurt or dying inside, you may enter to help. You do not need the higher standard of probable cause required for a criminal raid.
+        <div class="case-card">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">Ames v. Ohio Dept of Youth Services</h3>
+                    <div class="case-topic">Employment / Reverse Discrimination</div>
+                </div>
+                <div>
+                    <span class="case-citation">No. 23-1039</span>
+                    <span class="badge badge-2025">DECIDED: JUNE 5, 2025</span>
+                </div>
+            </div>
+            <div class="summary-box">
+                <strong>Holding:</strong> The Court ruled that majority-group plaintiffs (e.g., straight/white employees) do not need to meet a higher "background circumstances" burden to prove discrimination under Title VII. The standard is now equal for all.
+            </div>
+            <div class="btn-container">
+                <a href="https://www.supremecourt.gov/opinions/24pdf/23-1039.pdf" target="_blank" class="btn-opinion">
+                    📄 Read Court Opinions
+                </a>
             </div>
         </div>
 
 
-        <h2 class="section-title">Certiorari Granted (Upcoming Cases)</h2>
+        <h2 class="section-title">Upcoming Cases (Certiorari Granted)</h2>
 
         <div class="case-card" style="border-left-color: #C5B358;">
             <div class="case-header">
                 <div>
                     <h3 class="case-title">Chatrie v. United States</h3>
-                    <div class="case-topic">Topic: "Geofence" Warrants & Digital Privacy</div>
                 </div>
                 <div>
                     <span class="case-citation">No. 24-118</span>
-                    <span class="badge badge-pending">GRANTED: JAN 16, 2026</span>
+                    <span class="badge badge-pending">GRANTED: Jan 16, 2026</span>
                 </div>
             </div>
-
             <div class="summary-box">
-                <strong>The Issue:</strong> Whether "Geofence Warrants" (ordering Google/Apple to identify <em>everyone</em> in a geographic area during a crime) violate the Fourth Amendment prohibition against "General Warrants."<br><br>
-                <strong>Why it Matters:</strong> This decision will determine if investigators can continue using location-dump warrants to solve crimes where there are no specific suspects yet.
+                <strong>The Issue:</strong> Whether "Geofence Warrants" (ordering Google to identify all users in a geographic area) violate the Fourth Amendment prohibition against General Warrants.
             </div>
+        </div>
 
-            <div class="takeaway" style="background-color: #fff3cd; color: #856404;">
-                <span>STATUS:</span> Argument likely Spring 2026. Prepare for potential changes to digital warrant applications.
+        <div class="case-card" style="border-left-color: #C5B358;">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">Glossip v. Oklahoma</h3>
+                </div>
+                <div>
+                    <span class="case-citation">No. 22-7466</span>
+                    <span class="badge badge-pending">GRANTED: Jan 22, 2025</span>
+                </div>
+            </div>
+            <div class="summary-box">
+                <strong>The Issue:</strong> Whether the state's suppression of exculpatory evidence (Brady violation) and the key witness's false testimony require overturning a capital murder conviction.
+            </div>
+        </div>
+
+
+        <h2 class="section-title">2024 Decisions (Archive)</h2>
+
+        <div class="case-card" style="border-left-color: #999;">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">City of Grants Pass v. Johnson</h3>
+                    <div class="case-topic">Public Camping / 8th Amendment</div>
+                </div>
+                <div>
+                    <span class="case-citation">No. 23-175</span>
+                    <span class="badge badge-2024">JUNE 28, 2024</span>
+                </div>
+            </div>
+            <div class="summary-box">
+                <strong>Holding:</strong> Ordinances banning camping on public property do <em>not</em> violate the 8th Amendment's prohibition on cruel and unusual punishment.
+            </div>
+            <div class="btn-container">
+                <a href="https://www.supremecourt.gov/opinions/23pdf/23-175_879d.pdf" target="_blank" class="btn-opinion">
+                    📄 Read Court Opinions
+                </a>
+            </div>
+        </div>
+
+        <div class="case-card" style="border-left-color: #999;">
+            <div class="case-header">
+                <div>
+                    <h3 class="case-title">United States v. Rahimi</h3>
+                    <div class="case-topic">Firearms / Domestic Violence Orders</div>
+                </div>
+                <div>
+                    <span class="case-citation">No. 22-915</span>
+                    <span class="badge badge-2024">JUNE 21, 2024</span>
+                </div>
+            </div>
+            <div class="summary-box">
+                <strong>Holding:</strong> Upheld the federal ban on firearm possession for individuals subject to domestic violence restraining orders.
+            </div>
+            <div class="btn-container">
+                <a href="https://www.supremecourt.gov/opinions/23pdf/22-915_8o6b.pdf" target="_blank" class="btn-opinion">
+                    📄 Read Court Opinions
+                </a>
             </div>
         </div>
 
