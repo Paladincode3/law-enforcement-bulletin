@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[STATE NAME] - Law Enforcement Bulletin</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Forces footer to bottom */
+        }
 
+        /* --- Top Navigation --- */
+        nav {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px 20px;
+            text-align: right;
+            border-bottom: 3px solid #C5B358;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        nav a:hover { color: #C5B358; }
+
+        /* --- State Header --- */
+        .state-header {
+            background: linear-gradient(to right, #002147, #003366);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #C5B358;
+        }
+
+        .state-header h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.8em;
+            margin: 10px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Logo Styling --- */
+        .state-logo {
+            width: 200px; /* Adjusted size for Flags */
+            display: block;
+            margin: 0 auto 15px;
+            /* Adds a slight glow to make it pop against the blue */
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); 
+        }
+
+        /* --- Main Content Layout --- */
+        .content-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* News on Left (wide), Sidebar on Right (narrow) */
+            gap: 30px;
+            flex: 1; /* Pushes footer down */
+        }
+
+        /* --- Card Design --- */
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 6px solid #002147;
+        }
+
+        .card h2 {
+            font-family: 'Times New Roman', serif;
+            color: #002147;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Card Color Coding */
+        .alert-card { border-left-color: #d9534f; } /* Red for Danger */
+        .alert-card h2 { color: #d9534f; }
+
+        .legal-card { border-left-color: #C5B358; } /* Gold for Legal */
+        
+        .date-stamp {
+            display: inline-block;
+            background-color: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar .widget {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .widget h3 { margin-top: 0; color: #333; border-bottom: 2px solid #C5B358; padding-bottom: 10px; display: inline-block;}
+        .widget ul { padding-left: 20px; }
+        .widget li { margin-bottom: 12px; }
+        .widget a { color: #002147; text-decoration: none; font-weight: bold; }
+        .widget a:hover { text-decoration: underline; }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #f0f0f0; 
+            padding: 30px 20px; 
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* --- Mobile Adjustments --- */
+        @media (max-width: 768px) {
+            .content-container { grid-template-columns: 1fr; } /* Stack sidebar below content */
+            .state-header h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <header class="state-header">
+        <img src="LEB-Website\state-flags\Flag_of_Ohio" alt="[STATE NAME] Shield" class="state-logo">
+        <h1>OHIO<br>
+      Law Enforcement Bulletin</h1>
+        <p>Daily Executive Summary & Legal Updates</p>
+</header>
+
+    <div class="content-container">
+        
+        <main>
+            <div class="card alert-card">
+                <h2>Officer Safety Alerts</h2>
+                <span class="date-stamp">Current as of: [INSERT DATE]</span>
+                <p><strong>Topic:</strong> [Headline Here]</p>
+                <p>[Insert Officer Safety Information, BOLO alerts, or critical threats here. If none, state: "No critical alerts at this time."]</p>
+            </div>
+
+            <div class="card legal-card">
+                <h2>Legal Updates: Case Law & Legislation</h2>
+                <p><strong>Case/Bill:</strong> [Case Name or Bill Number]</p>
+                <p><strong>Summary:</strong> [Brief summary of the legal update]</p>
+                <p><strong>Impact:</strong> [How this affects daily police work]</p>
+            </div>
+
+            <div class="card">
+                <h2>Accountability & General News</h2>
+                <p><strong>Topic:</strong> [Headline Here]</p>
+                <p>[Insert general news, internal affairs summaries, or department updates here.]</p>
+            </div>
+       
+            <div class="card" style="border-left: 6px solid #555;">
+                <h2>Bulletin Archive</h2>
+                <p>Search past alerts by keyword, topic, or date.</p>
+                
+                <input type="text" id="archiveSearch" onkeyup="filterArchive()" placeholder="Search archives (e.g., 'DUI', 'Jan 24', 'Case Law')..." 
+                style="width: 100%; padding: 12px; font-size: 1em; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 4px;">
+
+                <ul id="archiveList" style="list-style-type: none; padding: 0;">
+                    
+                    <li class="archive-item" style="padding: 15px; border-bottom: 1px solid #eee;">
+                        <span style="color:#C5B358; font-weight:bold; font-size:0.8em;">JAN 20, 2026</span>
+                        <strong style="color:#002147; display:block; margin-top:5px;">Supreme Court Ruling on Traffic Stops</strong>
+                        <span style="color:#555; font-size:0.9em;">Legal Update: Court clarifies rules on extending stops for K9 units.</span>
+                    </li>
+
+                    <li class="archive-item" style="padding: 15px; border-bottom: 1px solid #eee;">
+                        <span style="color:#C5B358; font-weight:bold; font-size:0.8em;">JAN 15, 2026</span>
+                        <strong style="color:#d9534f; display:block; margin-top:5px;">Officer Safety: Fentanyl Exposure Risks</strong>
+                        <span style="color:#555; font-size:0.9em;">Safety Alert: New handling protocols for powder evidence.</span>
+                    </li>
+
+                    <li class="archive-item" style="padding: 15px; border-bottom: 1px solid #eee;">
+                        <span style="color:#C5B358; font-weight:bold; font-size:0.8em;">DEC 12, 2025</span>
+                        <strong style="color:#002147; display:block; margin-top:5px;">Winter Uniform Policy Update</strong>
+                        <span style="color:#555; font-size:0.9em;">General News: Transition to winter gear begins next week.</span>
+                    </li>
+
+                </ul>
+                <p id="noResults" style="display:none; color:red; text-align:center;">No results found.</p>
+            </div>
+       
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>[STATE NAME] Quick Links</h3>
+                <ul>
+                    <li><a href="#">[State] Revised Code / Statutes</a></li>
+                    <li><a href="#">[State] Attorney General</a></li>
+                    <li><a href="#">[State] Fraternal Order of Police</a></li>
+                    <li><a href="#">[State] POST Commission</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Regional Archives</h3>
+                <p><em>Coming Soon: Filter by County or Region.</em></p>
+                <select style="width: 100%; padding: 8px; margin-top: 10px;">
+                    <option>Select a Region/County...</option>
+                </select>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto; font-size: 0.8em; color: #555; text-align: justify; line-height: 1.4;">
+            <p><strong>LEGAL DISCLAIMER:</strong> The information provided on The Law Enforcement Bulletin is for general informational and educational purposes only. It does not constitute legal advice, nor does it establish an attorney-client relationship. While we strive to provide accurate and up-to-date summaries of case law and statutes, officers should always consult their department's legal counsel, the local prosecutor's office, or their agency's policy manual before applying this information in the field. Reliance on any information provided herein is solely at your own risk.</p>
+        </div>
+        <p style="margin-top: 20px; color: #002147; font-weight: bold;">&copy; 2026 The Law Enforcement Bulletin. All Rights Reserved.</p>
+    </footer>
+
+<script>
+        function filterArchive() {
+            var input = document.getElementById('archiveSearch');
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById("archiveList");
+            var li = ul.getElementsByTagName('li');
+            var visibleCount = 0;
+
+            for (var i = 0; i < li.length; i++) {
+                var textValue = li[i].textContent || li[i].innerText;
+                if (textValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = ""; 
+                    visibleCount++;
+                } else {
+                    li[i].style.display = "none"; 
+                }
+            }
+
+            var noMsg = document.getElementById("noResults");
+            if (visibleCount === 0) {
+                noMsg.style.display = "block";
+            } else {
+                noMsg.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
