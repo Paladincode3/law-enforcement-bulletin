@@ -3,155 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Enforcement Bulletin - Home</title>
+    <title>The Law Enforcement Bulletin</title>
     <style>
-        /* Global Reset */
+        /* --- General Styling --- */
         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Light gray background for the window */
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header Section */
-        header {
-            background-color: #000080; /* Navy Blue */
-            padding: 20px;
             text-align: center;
         }
 
-        .logo {
-            max-height: 100px; /* Adjusts logo size without distorting */
-            width: auto;
+        /* --- Header Section --- */
+        header {
+            background-color: #002147; /* Police Navy Blue */
+            color: #C5B358; /* Gold */
+            padding: 20px;
+            border-bottom: 5px solid #C5B358;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-
-        /* Main Content Container */
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 40px auto; /* Centers the box on the page */
-            background-color: #ffffff; /* White body */
-            border: 2px solid black; /* Black border around the body */
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds subtle depth */
+        
+        /* Logo Styling */
+        .header-logo {
+            height: 120px; /* Adjust size as needed */
+            width: auto;
+            margin-bottom: 15px;
+            border: 2px solid #C5B358;
+            border-radius: 5px;
+            background-color: white;
+            padding: 5px;
         }
 
         h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5em; 
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Dropdown Styling --- */
+        .dropdown-container {
+            margin: 30px auto;
             text-align: center;
+        }
+
+        select#state-select {
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #002147;
+            border-radius: 5px;
+            background-color: white;
             color: #333;
-            margin-bottom: 30px;
+            width: 80%;
+            max-width: 400px;
+            cursor: pointer;
         }
 
-        /* Form Styling */
-        .dropdown-group {
-            margin-bottom: 20px;
+        select#state-select:focus {
+            outline: none;
+            border-color: #C5B358;
+            box-shadow: 0 0 5px rgba(197, 179, 88, 0.5);
         }
 
-        label {
-            display: block;
+        .go-btn {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            background-color: #002147;
+            color: #C5B358;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
             font-weight: bold;
-            margin-bottom: 5px;
-            color: #000080; /* Navy blue labels to match theme */
         }
 
-        select {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-
-        /* Submit/Go Button Styling (Optional placeholder) */
-        .btn-container {
-            text-align: center;
-            margin-top: 30px;
+        .go-btn:hover {
+            background-color: #003366;
         }
         
-        button {
-            background-color: #000080;
+        /* --- Quick Links Grid --- */
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .link-btn {
+            background-color: #eee;
+            color: #002147;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+        }
+        
+        .link-btn:hover {
+            background-color: #C5B358;
             color: white;
-            padding: 10px 25px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
         }
 
-        button:hover {
-            background-color: #000060;
+        footer {
+            margin-top: 50px; 
+            color: #666; 
+            font-size: 0.9em; 
+            padding-bottom: 20px;
         }
+
     </style>
 </head>
 <body>
 
     <header>
-        <img src="assets/leb-logo-5.png" alt="Law Enforcement Bulletin Logo" class="logo">
+        <img src="asset/leb-logo-5.png" alt="Law Enforcement Bulletin Logo" class="header-logo">
+        <h1>The Law Enforcement Bulletin</h1>
+        <p class="subtitle">The Premier Source for Officer Safety & Legal Updates</p>
     </header>
 
     <div class="container">
-        <h1>Case Law & Legislation Search</h1>
+        <h2>Select Your Jurisdiction</h2>
+        <p>Access daily executive summaries, case law updates, and safety alerts.</p>
 
-        <form action="#" method="get">
+        <div class="dropdown-container">
+            <label for="state-select" style="display:block; margin-bottom:10px; font-weight:bold; color:#002147;">Select Your State:</label>
             
-            <div class="dropdown-group">
-                <label for="scotus">US Supreme Court</label>
-                <select id="scotus" name="scotus">
-                    <option value="" disabled selected>Select Term / Year</option>
-                    <option value="2026">2026 Term</option>
-                    <option value="2025">2025 Term</option>
-                    <option value="recent">Most Recent Opinions</option>
-                </select>
-            </div>
+            <select id="state-select">
+                <option value="">-- Choose a State --</option>
+                <option value="states/ohio.html">Ohio</option>
+                <option value="states/pennsylvania.html">Pennsylvania</option>
+                <option value="coming-soon">New York</option>
+                <option value="coming-soon">Texas</option>
+                <option value="coming-soon">Florida</option>
+            </select>
 
-            <div class="dropdown-group">
-                <label for="circuit-courts">US Circuit Courts of Appeals</label>
-                <select id="circuit-courts" name="circuit-courts">
-                    <option value="" disabled selected>Select Circuit</option>
-                    <option value="1">1st Circuit</option>
-                    <option value="2">2nd Circuit</option>
-                    <option value="3">3rd Circuit</option>
-                    <option value="4">4th Circuit</option>
-                    <option value="5">5th Circuit</option>
-                    <option value="6">6th Circuit (Includes Ohio)</option>
-                    <option value="7">7th Circuit</option>
-                    <option value="8">8th Circuit</option>
-                    <option value="9">9th Circuit</option>
-                    <option value="10">10th Circuit</option>
-                    <option value="11">11th Circuit</option>
-                    <option value="dc">DC Circuit</option>
-                    <option value="fed">Federal Circuit</option>
-                </select>
-            </div>
+            <br>
+            <button class="go-btn" onclick="goToState()">GO</button>
+        </div>
 
-            <div class="dropdown-group">
-                <label for="district-courts">US District Courts</label>
-                <select id="district-courts" name="district-courts">
-                    <option value="" disabled selected>Select District</option>
-                    <option value="oh-n">Ohio Northern District</option>
-                    <option value="oh-s">Ohio Southern District</option>
-                    </select>
-            </div>
-
-            <div class="dropdown-group">
-                <label for="states">State Jurisdiction</label>
-                <select id="states" name="states">
-                    <option value="" disabled selected>Select State</option>
-                    <option value="OH">Ohio</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="IN">Indiana</option>
-                    <option value="MI">Michigan</option>
-                    </select>
-            </div>
-
-            <div class="btn-container">
-                <button type="button">Go to Jurisdiction</button>
-            </div>
-
-        </form>
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+        
+        <h3>Federal Updates</h3>
+        <div class="quick-links">
+            <a href="scotus/index.html" class="link-btn">Supreme Court (SCOTUS)</a>
+            <a href="circuits/sixth_circuit.html" class="link-btn">6th Circuit Appeals</a>
+        </div>
     </div>
+
+    <script>
+        function goToState() {
+            var selectBox = document.getElementById("state-select");
+            var selectedValue = selectBox.value;
+            
+            if (selectedValue) {
+                if (selectedValue === "coming-soon") {
+                    alert("Coming Soon! The bulletin for " + selectBox.options[selectBox.selectedIndex].text + " is under construction.");
+                } else {
+                    // Navigate to the file
+                    window.location.href = selectedValue;
+                }
+            } else {
+                alert("Please select a state first.");
+            }
+        }
+    </script>
+
+    <footer>
+        &copy; 2026 The Law Enforcement Bulletin. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
+
